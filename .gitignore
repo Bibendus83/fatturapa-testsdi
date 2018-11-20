@@ -1,5 +1,6 @@
 .directory
 .DS_Store
+.vscode
 core/config.php
 rpc/config/database.php
 soap/config.php
