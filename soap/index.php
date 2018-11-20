@@ -50,7 +50,7 @@ switch ($actor) {
                 require './TrasmissioneFatture/index.php';
                 break;
             default:
-                echo "404 soap endpoint not $endpoint found for actor $actor";
+                echo "404 soap endpoint $endpoint not found for actor $actor";
                 break;
         }
 }
