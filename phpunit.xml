@@ -18,6 +18,9 @@
             <directory suffix=".php">./</directory>
             <exclude>
                 <directory>./vendor</directory>
+                <directory>./core/vendor</directory>
+                <directory>./rpc/vendor</directory>
+                <directory>./soap/vendor</directory>
             </exclude>
         </whitelist>
     </filter>
