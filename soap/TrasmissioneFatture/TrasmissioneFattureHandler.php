@@ -12,6 +12,7 @@ class TrasmissioneFattureHandler
 
     public function RicevutaConsegna($parametersIn)
     {
+        // B2B + PA
         Issuer::receive(
             $notification_blob = $parametersIn->File,
             $filename = $parametersIn->NomeFile,
@@ -22,6 +23,7 @@ class TrasmissioneFattureHandler
 
     public function NotificaMancataConsegna($parametersIn)
     {
+        // B2B + PA
         Issuer::receive(
             $notification_blob = $parametersIn->File,
             $filename = $parametersIn->NomeFile,
@@ -32,6 +34,7 @@ class TrasmissioneFattureHandler
 
     public function NotificaScarto($parametersIn)
     {
+        // B2B + PA
         Issuer::receive(
             $notification_blob = $parametersIn->File,
             $filename = $parametersIn->NomeFile,
@@ -42,6 +45,7 @@ class TrasmissioneFattureHandler
 
     public function NotificaEsito($parametersIn)
     {
+        // PA
         error_log('======== NotificaEsito');
         $xmlString = base64_decode($parametersIn->File);
         $xml = Base::unpack($xmlString);
@@ -65,6 +69,7 @@ class TrasmissioneFattureHandler
 
     public function NotificaDecorrenzaTermini($parametersIn)
     {
+        // PA
         error_log("==== TrasmissioneFattureHandler::NotificaDecorrenzaTermini");
         Issuer::receive(
             $notification_blob = $parametersIn->File,
@@ -76,6 +81,7 @@ class TrasmissioneFattureHandler
 
     public function AttestazioneTrasmissioneFattura($parametersIn)
     {
+        // PA
         error_log('==== AttestazioneTrasmissioneFattura');
         Issuer::receive(
             $notification_blob = $parametersIn->File,

@@ -51,6 +51,10 @@ class Issuer
                 $response = $service->RiceviFile($fileSdIBase);
                                 
                 if (is_object($response)) {
+                    Log::error('RESPONSE------------------:');
+                    Log::error('Response:'.print_r($response, true));
+                    Log::error('------------------END');
+
                     if ($response->getErrore()) {
                         Invoice::find($Invoice['id'])->update(['status' => 'I_INVALID' ]);
                     } else {
